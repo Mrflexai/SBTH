@@ -1,0 +1,53 @@
+ma.remorquepro.cac.DepotTest                              3 test(s)  0 échec(s)  9.9s
+    OK    sauvegarde puis restauration complete
+    OK    les donnees persistent apres fermeture et reouverture de la base
+    OK    creer modifier dupliquer supprimer
+ma.remorquepro.cac.FormulaireMissionTest                  7 test(s)  0 échec(s)  0.0s
+    OK    parametres - validation
+    OK    distance et km facturables calcules depuis le compteur
+    OK    conversion en mission et calcul du total
+    OK    supplements proposes selon date et heure
+    OK    aller-retour mission formulaire
+    OK    saisie manuelle des km facturables respectee
+    OK    montants illisibles signales
+ma.remorquepro.cac.InterfaceTest                          3 test(s)  0 échec(s)  6.7s
+    OK    creation d'une mission depuis le formulaire puis progression du statut
+    OK    numero obligatoire
+    OK    historique, recherche et onglets
+ma.remorquepro.cac.PartageFichiersTest                    1 test(s)  0 échec(s)  0.2s
+    OK    exports xlsx et pdf partageables
+ma.remorquepro.core.ExportsTest                           6 test(s)  0 échec(s)  0.8s
+    OK    pdf - encodage WinAnsi et metriques
+    OK    xlsx - periode vide et caracteres speciaux
+    OK    xlsx - structure valide, deux onglets, en-tetes CAC et totaux
+    OK    pdf - multipage valide avec totaux
+    OK    colonnes et dates excel
+    OK    pdf - periode multi-mois et periode vide
+ma.remorquepro.core.FacturationTest                       5 test(s)  0 échec(s)  0.0s
+    OK    le total utilise les km facturables et non la distance parcourue
+    OK    total = base + km facturables x tarif + supplements + frais
+    OK    reste et statut de paiement
+    OK    kilometrage
+    OK    arrondi au centime sans erreur flottante
+ma.remorquepro.core.MissionsTest                          7 test(s)  0 échec(s)  0.1s
+    OK    nouvelle mission pre-remplie et supplements proposes
+    OK    filtres
+    OK    statistiques
+    OK    changement de statut horodate l'etape une seule fois
+    OK    validation
+    OK    tableau de bord
+    OK    duplication garde le contexte et remet a zero le suivi
+ma.remorquepro.core.SauvegardeTest                        5 test(s)  0 échec(s)  0.1s
+    OK    aller-retour complet sans perte
+    OK    fichier etranger refuse
+    OK    champs inconnus ignores et champs absents par defaut
+    OK    version future refusee
+    OK    fichier corrompu refuse
+ma.remorquepro.core.TempsTest                             6 test(s)  0 échec(s)  0.0s
+    OK    heures
+    OK    periode inversee refusee
+    OK    formats
+    OK    plage de nuit chevauchant minuit
+    OK    periodes
+    OK    weekend
+TOTAL : 43 tests, 0 échec(s)

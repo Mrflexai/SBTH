@@ -1,0 +1,116 @@
+== apksigner verify ==
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v3.2 scheme (APK Signature Scheme v3.2): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+V2 Signer: certificate DN: CN=Remorque Pro, O=Remorque Pro, C=MA
+V2 Signer: certificate SHA-256 digest: 1d4acf91141ad64248b16d56b269960e1eddde356d7b2dee57faa07d84cc7a47
+V2 Signer: certificate SHA-1 digest: 4fdcce71a70a2adbb9b212e4cd1266eb1db3a998
+V2 Signer: certificate MD5 digest: b05dff01875db016c0cf4f22a40a25cf
+V2 Signer: key algorithm: RSA
+V2 Signer: key size (bits): 2048
+V2 Signer: public key SHA-256 digest: 3a9c46908002b809a0c88140856bb3e0e7714981f679302236021904a7e7bc0b
+V2 Signer: public key SHA-1 digest: 944d1d1baed2542ade159a7f4bcfef8c03fa5bd5
+V2 Signer: public key MD5 digest: bd70741416393dc5902267cc4b62c4b5
+
+== aapt2 dump badging (extrait) ==
+package: name='ma.remorquepro.cac' versionCode='1' versionName='1.0.0' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'
+targetSdkVersion:'35'
+uses-permission: name='ma.remorquepro.cac.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'
+application-label:'Remorque Pro'
+application-label-af:'Remorque Pro'
+application-label-am:'Remorque Pro'
+application-label-ar:'Remorque Pro'
+application-label-as:'Remorque Pro'
+application-label-az:'Remorque Pro'
+application-label-be:'Remorque Pro'
+application-label-bg:'Remorque Pro'
+application-label-bn:'Remorque Pro'
+application-label-bs:'Remorque Pro'
+application-label-ca:'Remorque Pro'
+application-label-cs:'Remorque Pro'
+application-label-da:'Remorque Pro'
+application-label-de:'Remorque Pro'
+application-label-el:'Remorque Pro'
+application-label-en-AU:'Remorque Pro'
+application-label-en-CA:'Remorque Pro'
+application-label-en-GB:'Remorque Pro'
+application-label-en-IN:'Remorque Pro'
+application-label-en-XC:'Remorque Pro'
+application-label-es:'Remorque Pro'
+application-label-es-US:'Remorque Pro'
+application-label-et:'Remorque Pro'
+application-label-eu:'Remorque Pro'
+application-label-fa:'Remorque Pro'
+application-label-fi:'Remorque Pro'
+application-label-fr:'Remorque Pro'
+application-label-fr-CA:'Remorque Pro'
+application-label-gl:'Remorque Pro'
+application-label-gu:'Remorque Pro'
+application-label-hi:'Remorque Pro'
+application-label-hr:'Remorque Pro'
+application-label-hu:'Remorque Pro'
+application-label-hy:'Remorque Pro'
+application-label-in:'Remorque Pro'
+application-label-is:'Remorque Pro'
+application-label-it:'Remorque Pro'
+application-label-iw:'Remorque Pro'
+application-label-ja:'Remorque Pro'
+application-label-ka:'Remorque Pro'
+application-label-kk:'Remorque Pro'
+application-label-km:'Remorque Pro'
+application-label-kn:'Remorque Pro'
+application-label-ko:'Remorque Pro'
+application-label-ky:'Remorque Pro'
+application-label-lo:'Remorque Pro'
+application-label-lt:'Remorque Pro'
+application-label-lv:'Remorque Pro'
+application-label-mk:'Remorque Pro'
+application-label-ml:'Remorque Pro'
+application-label-mn:'Remorque Pro'
+application-label-mr:'Remorque Pro'
+application-label-ms:'Remorque Pro'
+application-label-my:'Remorque Pro'
+application-label-nb:'Remorque Pro'
+application-label-ne:'Remorque Pro'
+application-label-nl:'Remorque Pro'
+application-label-or:'Remorque Pro'
+application-label-pa:'Remorque Pro'
+application-label-pl:'Remorque Pro'
+application-label-pt:'Remorque Pro'
+application-label-pt-BR:'Remorque Pro'
+application-label-pt-PT:'Remorque Pro'
+application-label-ro:'Remorque Pro'
+application-label-ru:'Remorque Pro'
+application-label-si:'Remorque Pro'
+application-label-sk:'Remorque Pro'
+application-label-sl:'Remorque Pro'
+application-label-sq:'Remorque Pro'
+application-label-sr:'Remorque Pro'
+application-label-sr-Latn:'Remorque Pro'
+application-label-sv:'Remorque Pro'
+application-label-sw:'Remorque Pro'
+application-label-ta:'Remorque Pro'
+application-label-te:'Remorque Pro'
+application-label-th:'Remorque Pro'
+application-label-tl:'Remorque Pro'
+application-label-tr:'Remorque Pro'
+application-label-uk:'Remorque Pro'
+application-label-ur:'Remorque Pro'
+application-label-uz:'Remorque Pro'
+application-label-vi:'Remorque Pro'
+application-label-zh-CN:'Remorque Pro'
+application-label-zh-HK:'Remorque Pro'
+application-label-zh-TW:'Remorque Pro'
+application-label-zu:'Remorque Pro'
+launchable-activity: name='ma.remorquepro.cac.MainActivity'  label='' icon=''
+
+== aapt2 dump permissions ==
+package: ma.remorquepro.cac
+permission: ma.remorquepro.cac.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission: name='ma.remorquepro.cac.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'

@@ -1,0 +1,2 @@
+af3c551e61f8834c470955a6e6430a09e8da1c55064f3baca907ed1567c043aa  RemorquePro-CAC-v1.0.0-debug.apk
+20cbd1cebaf4339bf79c225c5b7488f86f1c3a0b9a1ed8c7a5cf848b7ec4b407  RemorquePro-CAC-v1.0.0.apk

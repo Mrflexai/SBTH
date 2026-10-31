@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dépanneuse stylisée (zone sûre 66dp centrée dans 108dp). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Plateau -->
+    <path android:fillColor="#FFFFFFFF" android:pathData="M26,58h34v8h-34z" />
+    <!-- Cabine -->
+    <path android:fillColor="#FFFFFFFF" android:pathData="M60,46h12l8,10v10h-20z" />
+    <path android:fillColor="#FF1F3864" android:pathData="M63,49h8l5,6h-13z" />
+    <!-- Bras de levage et crochet -->
+    <path android:fillColor="#FFF2B33D" android:pathData="M28,58l14,-18l3,2l-14,18z" />
+    <path android:fillColor="#FFF2B33D" android:pathData="M41,40h4v10h-4z" />
+    <!-- Roues -->
+    <path android:fillColor="#FFFFFFFF" android:pathData="M36,72m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0" />
+    <path android:fillColor="#FFFFFFFF" android:pathData="M70,72m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0" />
+    <path android:fillColor="#FF1F3864" android:pathData="M36,72m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FF1F3864" android:pathData="M70,72m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+</vector>

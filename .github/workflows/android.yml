@@ -1,0 +1,88 @@
+name: Android — tests et APK
+
+on:
+  push:
+    branches: ['**']
+    paths-ignore:
+      - 'livrables/**'
+      - '**.md'
+  workflow_dispatch:
+    inputs:
+      publier_apk:
+        description: "Copier l'APK compilé dans livrables/ et le committer sur la branche"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Tests unitaires (calculs, exports, Room, interface Compose)
+        run: ./gradlew --no-daemon --stacktrace :core:test :app:testDebugUnitTest
+
+      - name: Compilation des APK
+        run: ./gradlew --no-daemon --stacktrace :app:assembleDebug :app:assembleRelease
+
+      - name: Vérification de l'APK (signature, manifeste, aucune permission Internet)
+        run: |
+          set -e
+          BT=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
+          APK=app/build/outputs/apk/release/app-release.apk
+          "$BT/apksigner" verify --verbose --print-certs "$APK"
+          "$BT/aapt2" dump badging "$APK" | grep -E "^(package|sdkVersion|targetSdkVersion|application-label|uses-permission)" || true
+          if "$BT/aapt2" dump permissions "$APK" | grep -q "android.permission.INTERNET"; then
+            echo "ERREUR : l'APK demande la permission INTERNET"; exit 1
+          fi
+          mkdir -p dist/exemples
+          cp "$APK" dist/RemorquePro-CAC-v1.0.0.apk
+          cp app/build/outputs/apk/debug/app-debug.apk dist/RemorquePro-CAC-v1.0.0-debug.apk
+          cp core/build/exemples-exports/* dist/exemples/ 2>/dev/null || true
+          cp app/build/exemples-exports/* dist/exemples/ 2>/dev/null || true
+          (cd dist && sha256sum *.apk > SHA256SUMS.txt)
+          ls -la dist dist/exemples
+
+      - name: Artefact — APK et exemples d'exports
+        uses: actions/upload-artifact@v4
+        with:
+          name: RemorquePro-CAC-apk
+          path: dist/
+
+      - name: Artefact — rapports de tests
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rapports-tests
+          path: |
+            core/build/reports/tests/
+            app/build/reports/tests/
+            app/build/test-results/
+            core/build/test-results/
+
+      - name: Publication de l'APK dans livrables/
+        if: github.event_name == 'workflow_dispatch' && inputs.publier_apk
+        run: |
+          set -e
+          rm -rf livrables && mkdir -p livrables
+          cp -r dist/* livrables/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add livrables
+          git commit -m "Livrables : APK Remorque Pro compilé par la CI (${GITHUB_SHA::7}) [skip ci]" || echo "Rien à publier"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
